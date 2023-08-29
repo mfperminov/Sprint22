@@ -5,20 +5,19 @@ plugins {
 }
 
 android {
-    namespace = "ru.yandex.practicum.sprint22"
+    namespace = "com.example.tvapp"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "ru.yandex.practicum.sprint22"
+        applicationId = "com.example.tvapp"
         minSdk = 28
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
+
     }
 
     buildTypes {
@@ -39,7 +38,6 @@ android {
     }
     buildFeatures {
         compose = true
-        viewBinding = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.3"
@@ -54,26 +52,15 @@ android {
 dependencies {
 
     implementation(libs.core.ktx)
+    implementation(libs.appcompat)
+    implementation(platform(libs.compose.bom))
+    implementation(libs.ui.tooling.preview)
+    implementation(libs.tv.foundation)
+    implementation(libs.tv.material)
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.activity.compose)
-    implementation(platform(libs.compose.bom))
-    implementation(libs.ui)
-    implementation(libs.ui.graphics)
-    implementation(libs.ui.tooling.preview)
-    implementation(libs.material3)
-    implementation(libs.material)
-    implementation(libs.appcompat)
-    implementation(libs.constraintlayout)
-    implementation(libs.navigation.fragment.ktx)
-    implementation(libs.navigation.ui.ktx)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.test.ext.junit)
-    androidTestImplementation(libs.espresso.core)
     androidTestImplementation(platform(libs.compose.bom))
     androidTestImplementation(libs.ui.test.junit4)
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
-    val fragment_version = "1.5.7"
-    implementation("androidx.fragment:fragment-ktx:$fragment_version")
-    debugImplementation("androidx.fragment:fragment-testing:$fragment_version")
 }

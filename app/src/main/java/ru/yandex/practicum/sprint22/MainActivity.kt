@@ -1,6 +1,7 @@
 package ru.yandex.practicum.sprint22
 
 import android.content.ContentValues
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -19,10 +20,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.commit
+import androidx.fragment.app.transaction
+import ru.yandex.practicum.sprint22.bottom_sheet.BottomSheetActivity
 import ru.yandex.practicum.sprint22.permissions.loginUri
 import ru.yandex.practicum.sprint22.ui.theme.Sprint22Theme
 
-class MainActivity : ComponentActivity() {
+class MainActivity : FragmentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -43,6 +48,9 @@ class MainActivity : ComponentActivity() {
                             text = "ОРИГИНАЛЬНОЕ приложение",
                             modifier = Modifier
                         )
+                        Button(onClick = { openBottomSheetScreen() }) {
+                            Text(text = "открыть экран с ботомшитом")
+                        }
                         Spacer(modifier = Modifier.height(16.dp))
                         Button(onClick = {
                             shareLogin()
@@ -61,6 +69,10 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+    }
+
+    private fun openBottomSheetScreen() {
+        startActivity(Intent(this, BottomSheetActivity::class.java))
     }
 
     private fun shareLogin() {

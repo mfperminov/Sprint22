@@ -3,6 +3,15 @@
   <component name="deploymentTargetDropDown">
     <value>
       <entry key="another">
+        <State />
+      </entry>
+      <entry key="app">
+        <State />
+      </entry>
+      <entry key="app.tvapp">
+        <State />
+      </entry>
+      <entry key="tvapp">
         <State>
           <targetSelectedWithDropDown>
             <Target>
@@ -10,16 +19,13 @@
               <deviceKey>
                 <Key>
                   <type value="VIRTUAL_DEVICE_PATH" />
-                  <value value="$USER_HOME$/.android/avd/Pixel_2_API_UpsideDownCake.avd" />
+                  <value value="$USER_HOME$/.android/avd/Television_1080p_API_34.avd" />
                 </Key>
               </deviceKey>
             </Target>
           </targetSelectedWithDropDown>
-          <timeTargetWasSelectedWithDropDown value="2023-08-24T18:17:09.213563712Z" />
+          <timeTargetWasSelectedWithDropDown value="2023-08-29T22:26:30.460924Z" />
         </State>
-      </entry>
-      <entry key="app">
-        <State />
       </entry>
     </value>
   </component>
