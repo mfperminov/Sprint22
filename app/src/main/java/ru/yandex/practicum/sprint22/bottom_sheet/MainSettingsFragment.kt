@@ -1,4 +1,4 @@
-/*
+package ru.yandex.practicum.sprint22.bottom_sheet/*
 package ru.yandex.practicum.sprint22.bottom_sheet
 
 import androidx.annotation.DrawableRes
