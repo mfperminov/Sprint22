@@ -17,7 +17,7 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginVertical="16dp"
             android:text="Настройки"
-            android:textColor="#F1FFFFFF"/>
+            android:textColor="#F1000000" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/settings_main_buttons_container"

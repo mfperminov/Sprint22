@@ -9,9 +9,15 @@ import android.graphics.Rect
 import android.graphics.drawable.Drawable
 
 class DiagonalLineDrawable : Drawable() {
-    private val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = Color.BLACK }
+    private val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        color = Color.BLACK
+        strokeWidth = 10f
+        style = Paint.Style.STROKE
+    }
+
     override fun draw(canvas: Canvas) {
         val bound: Rect = bounds
+        canvas.drawRect(bounds, paint)
         canvas.drawLine(
             bounds.left.toFloat(),
             bounds.top.toFloat(),

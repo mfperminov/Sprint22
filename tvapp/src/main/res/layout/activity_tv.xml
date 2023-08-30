@@ -8,11 +8,13 @@
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="100dp"
         android:text="Первая кнопка"
+        android:background="@drawable/tv_button"
         android:layout_height="100dp"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="100dp"
         android:layout_marginVertical="48dp"
+        android:background="@drawable/tv_button"
         android:text="Вторая кнопка"
         android:layout_height="100dp"/>
 

@@ -1,30 +1,21 @@
-package ru.yandex.practicum.sprint22.bottom_sheet/*
 package ru.yandex.practicum.sprint22.bottom_sheet
 
-import androidx.annotation.DrawableRes
-import ru.yandex.practicum.sprint22.R
-import ru.yandex.practicum.sprint22.databinding.SettingsMainDialogFragmentBinding
-import android.annotation.SuppressLint
 import android.os.Bundle
-import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
-import androidx.core.os.bundleOf
+import androidx.annotation.DrawableRes
 import androidx.core.view.doOnLayout
-import androidx.fragment.app.setFragmentResult
-import androidx.lifecycle.coroutineScope
 import androidx.recyclerview.widget.GridLayoutManager
-import kotlinx.coroutines.flow.distinctUntilChanged
-import kotlinx.coroutines.flow.map
+import ru.yandex.practicum.sprint22.R
+import ru.yandex.practicum.sprint22.databinding.SettingsMainDialogFragmentBinding
 
 class Setting(val name: String, @DrawableRes val drawableRes: Int)
 
-*/
 /**
  * Отображает главные настройки плеера.
- *//*
+ */
 
 class MainSettingsFragment : BaseBottomDialogFragment() {
 
@@ -94,4 +85,11 @@ class MainSettingsFragment : BaseBottomDialogFragment() {
 
     }
 
-}*/
+}
+
+/** @return result + 1 if remainder is not null, result otherwise */
+fun Int.ceilDivide(divider: Int) = this / divider + this.normalizedRemainder(divider)
+
+fun Int.normalizedRemainder(divider: Int) = (this % divider != 0).toInt()
+
+fun Boolean.toInt() = if (this) 1 else 0
