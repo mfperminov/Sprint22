@@ -13,8 +13,10 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -29,9 +31,8 @@ class AnotherActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    val loginState = remember {
-                        mutableStateOf("")
-                    }
+                    var loginState by remember { mutableStateOf("") }
+                    var clicked by remember { mutableStateOf(false) }
                     Column(
                         modifier = Modifier.fillMaxSize(),
                         verticalArrangement = Arrangement.Center,
@@ -42,15 +43,20 @@ class AnotherActivity : ComponentActivity() {
                             modifier = Modifier
                         )
                         Spacer(modifier = Modifier.height(16.dp))
-                        Button(onClick = { loginState.value = getLogin() }) {
+                        Button(onClick = {
+                            loginState = getLogin()
+                            clicked = true
+                        }) {
                             Text(
                                 text = "Посмотреть, есть ли сохраненный логин",
                                 modifier = Modifier
                             )
                         }
                         Spacer(modifier = Modifier.height(16.dp))
-                        if (loginState.value.isNotEmpty()) {
-                            Text(text = "Ура есть! ${loginState.value}")
+                        if (loginState.isNotEmpty()) {
+                            Text(text = "Ура есть! ${loginState}")
+                        } else if (clicked) {
+                            Text(text = "Логина нет!")
                         }
                     }
                 }

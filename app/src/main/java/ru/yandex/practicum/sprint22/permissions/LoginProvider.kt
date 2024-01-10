@@ -34,6 +34,12 @@ class LoginProvider : ContentProvider() {
         )
     }
 
+    override fun onCreate(): Boolean {
+        sharedPreferences =
+            context?.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE) ?: return false
+        return true
+    }
+
     override fun insert(uri: Uri, values: ContentValues?): Uri? {
         sharedPreferences.edit {
             putString(LOGIN_KEY, values?.getAsString("login"))
@@ -41,15 +47,9 @@ class LoginProvider : ContentProvider() {
         return null
     }
 
-    override fun onCreate(): Boolean {
-        sharedPreferences =
-            context?.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE) ?: return false
-        return true
-    }
-
     override fun query(
         uri: Uri, projection: Array<String>?, selection: String?,
-        selectionArgs: Array<String>?, sortOrder: String?
+        selectionArgs: Array<String>?, sortOrder: String?,
     ): Cursor? {
         return if (uriMatcher.match(uri) == 1) {
             MatrixCursor(arrayOf("login")).apply {

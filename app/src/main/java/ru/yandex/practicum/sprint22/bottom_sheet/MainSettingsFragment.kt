@@ -31,10 +31,10 @@ class MainSettingsFragment : BaseBottomDialogFragment() {
             Setting("Качество", R.drawable.baseline_1k_24),
             Setting("Звук", R.drawable.baseline_app_settings_alt_24),
             Setting("Скорость", R.drawable.baseline_bathtub_24),
-            Setting("Ошибка",R.drawable.baseline_add_alert_24),
-            Setting("Субтитры",R.drawable.baseline_arrow_forward_24),
-            Setting("Зум",R.drawable.baseline_anchor_24),
-        )
+            Setting("Ошибка", R.drawable.baseline_add_alert_24),
+            Setting("Субтитры", R.drawable.baseline_arrow_forward_24),
+            Setting("Зум", R.drawable.baseline_anchor_24),
+        ).take(5)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
