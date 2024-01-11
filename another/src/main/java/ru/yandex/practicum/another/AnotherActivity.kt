@@ -73,8 +73,7 @@ class AnotherActivity : ComponentActivity() {
         )?.use {
             val index: Int = it.getColumnIndex("login")
             while (it.moveToNext()) {
-                // Gets the value from the column
-                return it.getString(index)
+                return it.getString(index) ?: ""
             }
         }
         return ""
